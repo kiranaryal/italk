@@ -22,7 +22,7 @@ public function index(){
 
     $messages = Message::where('user_id', $user)->orwhere('profile_id',$user)->latest()->paginate(15)->get();
  
-    return view('profiles.chat',compact('messages'));
+    return view('profiles.chat',compact(['messages','user']));
 
 }
 
