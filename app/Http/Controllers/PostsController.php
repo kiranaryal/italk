@@ -16,7 +16,7 @@ class PostsController extends Controller
 
 
     public function __construct(){
-        $this -> middleware('auth');
+        $this -> middleware(['auth','verified']);
     }
        public function index( $user){
 
@@ -25,7 +25,8 @@ class PostsController extends Controller
             //  $users = auth()->user()->following()->pluck('profiles.user_id') ;
             if(count($users) > 0)
             { $posts = Post::
-             wherein('user_id',[$user,$users])->with('user')
+             wherein('user_id',$users)->with('user')
+             ->orWhere('user_id',$user)
               ->latest()
             ->paginate(5);
         }

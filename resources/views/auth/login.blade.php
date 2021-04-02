@@ -70,4 +70,39 @@
         </div>
     </div>
 </div>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js">
+</script>
+<script>
+$(document).ready(function(){
+$('#email').on('blur', function(){
+var email= $(this).val().trim();
+if(email != '')
+(
+     $.ajax({
+         url : 'emailvalidation',
+         method : 'post',
+         data : { email:email},
+         success: function(response){
+             $("emailresult").html(response);
+
+         }
+
+     });
+)
+else{
+    $("emailresult").html("err");
+
+}
+});
+});
+
+
+
+</script>
+
+
+
+
+
+
 @endsection

@@ -1,6 +1,6 @@
 <template>
     <div>
-    <button class=" btn btn-primary h4  ml-4" @click="likeUser" v-text="buttonText"></button>
+    <button class=" btn btn-primary h4  ml-4" @click="likePost" v-text="buttonText"></button>
     </div>
 
 </template>
@@ -20,7 +20,7 @@
         },
 
         methods:{
-            likeUser(){
+            likePost(){
                  axios.post('/dislike/'+this.postId)
                 .then(response => {
 

@@ -15,10 +15,10 @@ class Post extends Model
     }
   
   
-public function posts()
-{
-    return $this->hasMany(Post::class)->orderBy('created_at','DESC');
-}
+// public function posts()
+// {
+//     return $this->hasMany(Post::class)->orderBy('created_at','DESC');
+// }
 public function comments()
 {
   return $this->hasMany('App\Comment');

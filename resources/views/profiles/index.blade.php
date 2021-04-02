@@ -15,19 +15,14 @@
              </div>
             <div class="d-flex text-align-right pl-5">
                 @can('update',$user->profile)
-                    <a href="/">s</a>
+                     <a href="/profile/{{$user->id}}/settings">s</a> 
                 @else
 
                     <follow-button user-id="{{$user->id}}" follows="{{ $follows }}"></follow-button>
-                    <h3>message</h3>
+                    <a href="/message/{{$user->id}}">message</a>
 
-<meta name="csrf-token" content="{{ csrf_token() }}">
-  <form action="/m"  enctype="multipart/form-data" method="post">
-  @csrf
-<textarea name="message" id="body" cols="30" rows="10"></textarea>
- <input type="hidden" name="profile_id" value="{{ $user->id }}">
- <button>submit</button>
-  </form>
+
+  
   <p></p>
 
 
@@ -61,9 +56,10 @@
     </div>
     <div class="col-6 justify-content-center  ">
      @foreach($user->posts as $post)
-     
+     <div class="container p-2">
            <a href="/p/{{$post->id}}" class=""> 
            <img src="/storage/{{ $post->image}}" style="height:300px;" ></a>
+     </div>
             
          
         

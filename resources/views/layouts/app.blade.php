@@ -13,6 +13,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/validate.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,8 +21,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-dark">
     <div id="app">
 
         <nav class="navbar navbar-expand-md navbar-primary bg-error shadow-sm">
@@ -88,8 +90,8 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
-                                <a href="/chat">chat</a>
-
+                                
+                                
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -102,15 +104,24 @@
                                     </form>
                                 </div>
                             </li>
+
                         @endguest
                     </ul>
                 </div>
+                @auth
+                <div class="chatbtn">
+                                    <a  href="/chat">Chat</a>
+                                </div>
+                                @endauth
             </div>
         </nav>
-
-        <main class="py-4">
+        <div class="py-4 text-white ">
+        
+        
             @yield('content')
-        </main>
-    </div>
+        </div>
+
+        
+    
 </body>
 </html>
