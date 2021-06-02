@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -7,7 +7,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
- :root {
+:root {
   --blue: #3490dc;
   --indigo: #6574cd;
   --purple: #9561e2;
@@ -70,14 +70,9 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #b83b15;
+  color: #212529;
   text-align: left;
-  background-color: #f8fafc;
-}
-
-.chatbtn{
-  float: right;
-  
+  background-color: #fff;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -517,7 +512,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f8fafc;
+  background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -560,34 +555,6 @@ kbd kbd {
   padding: 0;
   font-size: 100%;
   font-weight: 700;
-}
-.italk{
-  font-weight: bolder;
-}
-.login-btn{
-  color: black;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-shadow: black;
-  font-weight: bold;
-  font-size: large;
-  font-family: 'Courier New', Courier, monospace;
-
-}
-.register-btn{
-  color: black;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-shadow: black;
-  font-weight: bold;
-  font-size: large;
-  font-family: 'Courier New', Courier, monospace;
-}
-nav{
-  background-color: black;
-}
-body{
-  background-color: #fff;
 }
 
 pre {
@@ -4298,15 +4265,15 @@ input[type=button].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4512,8 +4479,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f8fafc;
-  border-color: #dee2e6 #dee2e6 #f8fafc;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
 }
 
 .nav-tabs .dropdown-menu {
@@ -10916,28 +10883,4 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-.pl-5{
-  font-weight: bolder;
-  background: -webkit-linear-gradient();
-  -webkit-background: text;
-  -webkit-text-fill-color: green;
-}
-.chat1{
-  font-size: 30px;
-}
-.chat2{
-  font-size: 10px;
-}
-.chat3{
-  font-size: 30px;
-}
 
-  
-
-
-/* h1 {
-  font-size: 72px;
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */

@@ -36,8 +36,8 @@
             @enderror
 
       </div>
-      <div class="row">
-          <button class="btn btn-primary">add new posts</button>
+      <div class="row pt-4">
+          <button class="btn btn-primary">add new post</button>
       </div>
     </div>
 </div> 

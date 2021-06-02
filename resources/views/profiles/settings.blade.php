@@ -16,7 +16,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" placeholder="{{$user->username}}" type="username" class="form-control @error('username') is-invalid @enderror" name="username" required autocomplete="new-password">
+                                <input id="username" placeholder="{{$user->username}}" type="name" class="form-control @error('username') is-invalid @enderror" name="username" required autocomplete="new-password">
 
             @error('username')
                         <span class="invalid-feedback" role="alert">

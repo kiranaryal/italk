@@ -12,10 +12,10 @@
         <div class="row">
             <div class="col-8 offset-2">
             <div class="row">
-                <h1>edit posts</h1>
+                <h1>EDIT PROFILE</h1>
             </div>
             <div class="form-group row">
-            <label for="title" class="col-md-4 col-form-label ">post title</label>
+            <label for="title" class="col-md-4 col-form-label ">title</label>
 
                                 
             <input id="title" type="text" 
@@ -33,7 +33,7 @@
       </div>
       
       <div class="form-group row">
-            <label for="description" class="col-md-4 col-form-label ">post description</label>
+            <label for="description" class="col-md-4 col-form-label ">description</label>
 
                                 
             <input id="description" type="text" 
@@ -53,7 +53,7 @@
 
 
       <div class="form-group row">
-            <label for="url" class="col-md-4 col-form-label ">post url</label>
+            <label for="url" class="col-md-4 col-form-label ">url</label>
 
                                 
             <input id="url" type="text" 
@@ -81,7 +81,7 @@
             @enderror
 
       </div>
-      <div class="row">
+      <div class="row pt-4">
           <button class="btn btn-primary">save profile</button>
       </div>
     </div>

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container text-dark+">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 text-dark">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right ">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -39,7 +39,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
+                                <input id="username" type="text" onchange="validateUsername()" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -85,7 +85,7 @@
         </div>
     </div>
 </div>
-
+<!-- 
  <script>
 function validateEmail() {
      
@@ -103,5 +103,5 @@ function validateEmail() {
             document.getElementById('erremail').innerHTML = " please leave a valid email "
             submit.style.display = 'none';
         }
-    }</script>
+    }</script> -->
 @endsection

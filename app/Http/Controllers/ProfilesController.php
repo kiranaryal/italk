@@ -12,23 +12,23 @@ use Intervention\Image\Facades\Image;
 class ProfilesController extends Controller
 {
     
-
+// this function then  
     public function index(User $user)
     {
         
-  
+  // collect no of followers
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
-        $postscount= Cache::remember('count.posts.'.$user->id, now()->addSeconds(30), function () use ($user) {
-            return $user->posts->count();
-        }  );
+// collect post count     
+   $postscount= Cache::remember('count.posts.'.$user->id, now()->addSeconds(30), function () use ($user) {
+            return $user->posts->count(); }  );
+//collect follower count
         $followerscount =Cache::remember('count.followers.'.$user->id, now()->addSeconds(30), function () use ($user) {
-            return $user->profile->followers->count();
-        }  );
-         
+            return $user->profile->followers->count(); }  );
+// collect following count
         $followingcount = Cache::remember('count.following.'.$user->id, now()->addSeconds(30), function () use ($user) {
             return $user->following->count();
         }  );
-
+// redirect page with all data to destination web  page
         return view('profiles.index', compact('user', 'follows','postscount','followerscount','followingcount'));
     }
 
@@ -105,6 +105,7 @@ class ProfilesController extends Controller
             ]);
            
             User::where('id',$user)->update(['email'=>$email['email']]);
+            User::where('id',$user)->update(['email_verified_at'=>NULL]);
             return redirect("/profile/{$user}/settings");
         }
         public function changepassword(Request $request){

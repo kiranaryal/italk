@@ -12,13 +12,6 @@ class message extends Model
     {
       return $this->belongsTo('App\Profile');
     }
-
-
-
-
-
-
-
     public function user()
     {
       return $this->belongsTo('App\User');

@@ -24,8 +24,7 @@ class Profile extends Model
         }
 
 
-
-        public function messages()
+public function messages()
 {
   return $this->hasMany('App\Message');
 }

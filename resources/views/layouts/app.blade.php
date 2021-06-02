@@ -39,12 +39,15 @@
                 <a class="navbar-brand d-flex align-items-center" href="/{{Auth::user()->id}}">
                    <div class="pr-5 " style=" border-right:1px solid #333"> 
                    <img src="/img/3.jpg" style="height:50px ;"></div>
-                   <div class="pl-5">iTalk</div>
+                   <div class="pl-5" >iTalk</div>
                    </a>
                   
-                   <a href="/profile/{{Auth::user()->id}}"><div class="pl-5">profile</div></a>
-                @endauth
-                   
+                   <a href="/profile/{{Auth::user()->id}}"><div class="pl-5 navbar-brand navbar-primary">Profile</div></a>
+               
+                <div  >
+                                    <a  href="/chat/{{auth()->user()->id}}" class="pl-5 navbar-brand navbar-primary">Chat</a>
+                                </div>
+                 @endauth
                    <form action="/search" method="POST" role="search">
                    @method('PATCH')
                         {{ csrf_field() }}
@@ -74,20 +77,20 @@
                         @guest
                             <li class="nav-item">
                             <button type="button" class="btn btn-success">
-                                <a class="nav-link login-btn" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link login-btn text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </button>
                             </li>
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                 <button type="button" class="btn btn-primary">
-                                    <a class="nav-link register-btn" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link register-btn text-white pl-2" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </button>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
                                 
@@ -102,17 +105,19 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+
+
+                     <a href="/profile/{{auth()->user()->id}}/settings" class="dropdown-item">Settings</a> 
                                 </div>
+
+                
+                             
                             </li>
 
                         @endguest
                     </ul>
                 </div>
-                @auth
-                <div class="chatbtn">
-                                    <a  href="/chat">Chat</a>
-                                </div>
-                                @endauth
+             
             </div>
         </nav>
         <div class="py-4 text-white ">

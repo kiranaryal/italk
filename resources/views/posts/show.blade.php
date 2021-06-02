@@ -16,7 +16,7 @@
                     <div>
                         <h3> 
                         <a href="/profile/{{$post->user->id}}">
-                        <span class="text-dark">{{$post->user->username}}</span></a></h3>
+                        <span class="success">{{$post->user->username}}</span></a></h3>
                     </div>
                     <div class="d-flex">
                         <div class="pl-2">
@@ -37,53 +37,52 @@
       
         </div>
                 <h4>{{ $post->caption}}</h4>
-        
+        <div class="pl-4 pt-2 pb-4 d-flex">
          @if (Auth::check())
        
          @if($likestatus === 1)
-         <form action="/dislike/{{$post->id}}">
-          <button>DISLIKE</button>
-          </form>
+         <a href="/dislike/{{$post->id}}">
+
+          <img src="/img/dislike.jpg"class="w-100 " style="max-width:60px" alt="like">
+          </a>
           @elseif($likestatus === 0)
-           <form action="/like/{{$post->id}}">
-          <button>LIKE</button>
-          </form>
+           <a href="/like/{{$post->id}}">
+          <img src="/img/like.jpg"class="w-100 " style="max-width:60px" alt="like">
+          </a>
           @endif 
         @endif
 
 
-         likes:{{$likescount}}
-      
-
-       
-      
-        
-
-
-
-                
-
-                 <h3>Comments</h3>
+        <span class="pl-4 pt-1 h3">
+  {{$likescount}}
+</span>
+</div>
+    <h3>Comments</h3>
                  
         @if (Auth::check())
         <meta name="csrf-token" content="{{ csrf_token() }}">
           <form action="/c"  enctype="multipart/form-data" method="post">
           @csrf
-        <textarea name="body" id="body" cols="30" rows="10"></textarea>
+        <input name="body"  id="body" cols="30" rows="10">
          <input type="hidden" name="post_id" value="{{ $post->id }}">
-         <button>submit</button>
+         
           </form>
           <p></p>
         
         @endif
-<h3>Comments</h3>
 
 
 
-@forelse ($post->comments as $comment)
-  <p>{{ $comment->user->name }} {{$comment->created_at}}</p>
-  <p>{{ $comment->body }}</p>
+
+@forelse ($post->comments->reverse() as $comment)
+<img src="{{$comment->user->profile->profileImage()}}" class="w-100 pl-2 rounded-circle " style="max-width:40px" >
+<b>
+{{ $comment->user->name}}
+</b>
+<br>
+  <p class=" pl-4 ">{{ $comment->body }}</p>
   <hr>
+
 @empty
   <p>This post has no comments</p>
 @endforelse

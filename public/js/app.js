@@ -37690,7 +37690,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("button", {
-      staticClass: " btn btn-primary h4  ml-4",
+      staticClass: " btn-primary mt-2 rounded  ml-2 pr-4",
       domProps: { textContent: _vm._s(_vm.buttonText) },
       on: { click: _vm.followUser }
     })
@@ -50030,8 +50030,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\kiran\Downloads\myproject-master\myproject-master\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\kiran\Downloads\myproject-master\myproject-master\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\kiran\OneDrive\Desktop\italk-main\italk-main\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\kiran\OneDrive\Desktop\italk-main\italk-main\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

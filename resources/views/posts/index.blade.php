@@ -21,7 +21,7 @@
                         <p>
                             <span class="pr-2 font-weight-bold"> 
                                 <a href="/profile/{{$post->user->id}}">
-                                        <span class="text-dark">{{$post->user->username}}
+                                        <span class="success">{{$post->user->username}}
                                         </span>
                                 </a>
                             {{ $post->caption}}
@@ -48,7 +48,11 @@
                             <h1>
                             <a href="/profile/{{$user->id}}">
                                 <img src="{{$user->profile->profileImage()}}" class="w-100 rounded-circle" style="max-width:40px" >
+                            <span class="text-white h3">
                             {{$user->name}}
+                            
+                            </span>
+
                             </a>
            
             
